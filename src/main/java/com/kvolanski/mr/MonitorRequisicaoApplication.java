@@ -1,4 +1,4 @@
-package com.kvolanski.rest;
+package com.kvolanski.mr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
