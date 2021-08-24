@@ -1,45 +1,43 @@
 package com.kvolanski.mr.controller;
 
+import java.util.List;
+import java.util.Optional;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kvolanski.mr.model.RequisicaoModel;
 import com.kvolanski.mr.repositoy.RequisicaoRepository;
 
 @RestController
-@RequestMapping("/requisicoes")
+@RequestMapping("/requisicoes")	
 public class RequisicaoController {
 
 	@Autowired
-	RequisicaoRepository requisicaoRepository;
-	
-    final static Logger logger = Logger.getLogger(RequisicaoController.class);
-    
+	RequisicaoRepository repository;
+
+	final static Logger logger = Logger.getLogger(RequisicaoController.class);
+
+	@GetMapping
+	public List<RequisicaoModel> getAll(){
+		return repository.findAll();
+	}
+
 	@PostMapping
-	public String test(@RequestBody String string) {
-		
-		logger.info(string);
-		
-		return string;
+	public RequisicaoModel insert(@RequestBody RequisicaoModel requisicaoModel) {
+		return repository.save(requisicaoModel);
 	}
-	
-	
-	
-	
-	
-	@RequestMapping(value="/nome", method=RequestMethod.DELETE)
-	public ResponseEntity<Void> deleteByNome(@PathVariable String nome) {			
-		RequisicaoModel requisicao = requisicaoRepository.findByNome(nome);			
-		requisicaoRepository.delete(requisicao);
-		return ResponseEntity.noContent().build();
+
+	@GetMapping(path = { "/{nome}" })
+	public Optional<RequisicaoModel> find(@PathVariable String nome) {
+		return repository.findByNome(nome);
 	}
-	
+
+
 }

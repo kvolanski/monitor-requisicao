@@ -2,6 +2,7 @@ package com.kvolanski.mr.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -82,6 +83,48 @@ public class RequisicaoModel implements Serializable{
 		this.tempoAlerta = tempoAlerta;
 	}
 
+	public RequisicaoModel(long id, String nome, LocalDateTime horaInicio, LocalDateTime horaFim,
+			LocalDateTime dataAtualizacao, String tempoAlerta) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.horaInicio = horaInicio;
+		this.horaFim = horaFim;
+		this.dataAtualizacao = dataAtualizacao;
+		this.tempoAlerta = tempoAlerta;
+	}
+
+	public RequisicaoModel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(dataAtualizacao, horaFim, horaInicio, id, nome, tempoAlerta);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		RequisicaoModel other = (RequisicaoModel) obj;
+		return Objects.equals(dataAtualizacao, other.dataAtualizacao) && Objects.equals(horaFim, other.horaFim)
+				&& Objects.equals(horaInicio, other.horaInicio) && id == other.id && Objects.equals(nome, other.nome)
+				&& Objects.equals(tempoAlerta, other.tempoAlerta);
+	}
+
+	@Override
+	public String toString() {
+		return "RequisicaoModel [id=" + id + ", nome=" + nome + ", horaInicio=" + horaInicio + ", horaFim=" + horaFim
+				+ ", dataAtualizacao=" + dataAtualizacao + ", tempoAlerta=" + tempoAlerta + "]";
+	}
+
+	
 	
 	
 
