@@ -1,4 +1,4 @@
-package com.kvolanski.rest.controller;
+package com.kvolanski.mr.controller;
 
 
 import org.apache.log4j.Logger;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kvolanski.rest.model.RequisicaoModel;
+import com.kvolanski.mr.model.RequisicaoModel;
 
 import repositoy.RequisicaoRepository;
 

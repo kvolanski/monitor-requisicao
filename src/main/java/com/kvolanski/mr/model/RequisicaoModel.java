@@ -1,4 +1,4 @@
-package com.kvolanski.rest.model;
+package com.kvolanski.mr.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

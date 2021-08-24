@@ -3,7 +3,7 @@ package repositoy;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.kvolanski.rest.model.RequisicaoModel;
+import com.kvolanski.mr.model.RequisicaoModel;
 
 @Repository
 public interface RequisicaoRepository extends JpaRepository<RequisicaoModel, Long> {
