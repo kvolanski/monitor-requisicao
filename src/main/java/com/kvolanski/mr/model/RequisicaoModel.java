@@ -22,11 +22,11 @@ public class RequisicaoModel implements Serializable{
 	@Column(name = "NOME")
 	private String nome;
 	
-	@Column(name = "DATA_INICIO")
-	private LocalDateTime dataInicio;
+	@Column(name = "HORA_INICIO")
+	private LocalDateTime horaInicio;
 	
-	@Column(name = "DATA_FINAL")
-	private LocalDateTime dataFinal;
+	@Column(name = "HORA_FIM")
+	private LocalDateTime horaFim;
 	
 	@Column(name = "DATA_ATUALIZACAO")
 	private LocalDateTime dataAtualizacao;
@@ -50,20 +50,20 @@ public class RequisicaoModel implements Serializable{
 		this.nome = nome;
 	}
 
-	public LocalDateTime getDataInicio() {
-		return dataInicio;
+	public LocalDateTime getHoraInicio() {
+		return horaInicio;
 	}
 
-	public void setDataInicio(LocalDateTime dataInicio) {
-		this.dataInicio = dataInicio;
+	public void setHoraInicio(LocalDateTime horaInicio) {
+		this.horaInicio = horaInicio;
 	}
 
-	public LocalDateTime getDataFinal() {
-		return dataFinal;
+	public LocalDateTime getHoraFim() {
+		return horaFim;
 	}
 
-	public void setDataFinal(LocalDateTime dataFinal) {
-		this.dataFinal = dataFinal;
+	public void setHoraFim(LocalDateTime horaFim) {
+		this.horaFim = horaFim;
 	}
 
 	public LocalDateTime getDataAtualizacao() {
@@ -81,8 +81,6 @@ public class RequisicaoModel implements Serializable{
 	public void setTempoAlerta(String tempoAlerta) {
 		this.tempoAlerta = tempoAlerta;
 	}
-	
-	
 
 	
 	

@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kvolanski.mr.model.RequisicaoModel;
-
-import repositoy.RequisicaoRepository;
+import com.kvolanski.mr.repositoy.RequisicaoRepository;
 
 @RestController
 @RequestMapping("/requisicoes")
