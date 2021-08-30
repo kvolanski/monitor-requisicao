@@ -34,6 +34,27 @@ public class RequisicaoModel implements Serializable{
 	
 	@Column(name = "TEMPO_ALERTA")
 	private String tempoAlerta;
+	
+	@Column(name = "DATA_HORA_ABERTURA_ALERTA")
+	private LocalDateTime dataHoraAberturaAlerta;
+
+	
+	
+	public RequisicaoModel() {
+		super();
+	}
+
+	public RequisicaoModel(long id, String nome, LocalDateTime horaInicio, LocalDateTime horaFim,
+			LocalDateTime dataAtualizacao, String tempoAlerta, LocalDateTime dataHoraAberturaAlerta) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.horaInicio = horaInicio;
+		this.horaFim = horaFim;
+		this.dataAtualizacao = dataAtualizacao;
+		this.tempoAlerta = tempoAlerta;
+		this.dataHoraAberturaAlerta = dataHoraAberturaAlerta;
+	}
 
 	public long getId() {
 		return id;
@@ -83,25 +104,17 @@ public class RequisicaoModel implements Serializable{
 		this.tempoAlerta = tempoAlerta;
 	}
 
-	public RequisicaoModel(long id, String nome, LocalDateTime horaInicio, LocalDateTime horaFim,
-			LocalDateTime dataAtualizacao, String tempoAlerta) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.horaInicio = horaInicio;
-		this.horaFim = horaFim;
-		this.dataAtualizacao = dataAtualizacao;
-		this.tempoAlerta = tempoAlerta;
+	public LocalDateTime getDataHoraAberturaAlerta() {
+		return dataHoraAberturaAlerta;
 	}
 
-	public RequisicaoModel() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setDataHoraAberturaAlerta(LocalDateTime dataHoraAberturaAlerta) {
+		this.dataHoraAberturaAlerta = dataHoraAberturaAlerta;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(dataAtualizacao, horaFim, horaInicio, id, nome, tempoAlerta);
+		return Objects.hash(dataAtualizacao, dataHoraAberturaAlerta, horaFim, horaInicio, id, nome, tempoAlerta);
 	}
 
 	@Override
@@ -113,17 +126,21 @@ public class RequisicaoModel implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		RequisicaoModel other = (RequisicaoModel) obj;
-		return Objects.equals(dataAtualizacao, other.dataAtualizacao) && Objects.equals(horaFim, other.horaFim)
-				&& Objects.equals(horaInicio, other.horaInicio) && id == other.id && Objects.equals(nome, other.nome)
-				&& Objects.equals(tempoAlerta, other.tempoAlerta);
+		return Objects.equals(dataAtualizacao, other.dataAtualizacao)
+				&& Objects.equals(dataHoraAberturaAlerta, other.dataHoraAberturaAlerta)
+				&& Objects.equals(horaFim, other.horaFim) && Objects.equals(horaInicio, other.horaInicio)
+				&& id == other.id && Objects.equals(nome, other.nome) && Objects.equals(tempoAlerta, other.tempoAlerta);
 	}
 
 	@Override
 	public String toString() {
 		return "RequisicaoModel [id=" + id + ", nome=" + nome + ", horaInicio=" + horaInicio + ", horaFim=" + horaFim
-				+ ", dataAtualizacao=" + dataAtualizacao + ", tempoAlerta=" + tempoAlerta + "]";
+				+ ", dataAtualizacao=" + dataAtualizacao + ", tempoAlerta=" + tempoAlerta + ", dataHoraAberturaAlerta="
+				+ dataHoraAberturaAlerta + "]";
 	}
+	
 
+	
 	
 	
 	

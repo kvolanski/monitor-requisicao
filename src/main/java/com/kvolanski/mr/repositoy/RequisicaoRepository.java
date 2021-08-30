@@ -15,4 +15,6 @@ public interface RequisicaoRepository extends JpaRepository<RequisicaoModel, Lon
 
 	ResponseEntity<RequisicaoModel> deleteById(Optional<RequisicaoModel> requisicaoModel);
 
+	RequisicaoModel save(Optional<RequisicaoModel> req);
+
 }
